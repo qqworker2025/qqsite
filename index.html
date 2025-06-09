@@ -3,101 +3,329 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuantaQuest Foundation</title>
-    
-    <!-- Tailwind CSS for styling -->
+    <title>QuantaQuest Foundation | Advancing Education in Vietnam</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        /* Custom styles for the Google Gemini/Blog aesthetic */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8f9fa; /* Google's light gray UI color */
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            background-color: #f8fafc; /* slate-50 */
+            color: #0f172a; /* slate-900 */
         }
-
-        /* Subtle gradient for the background, reminiscent of Gemini */
-        .gemini-gradient-bg {
-             background: linear-gradient(180deg, #f3e8ff 0%, #f8f9fa 30%);
+        .gradient-text {
+            background: linear-gradient(to right, #4f46e5, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        
-        /* Subtle animation for elements fading in */
+        .hero-bg {
+            background-color: #020617; /* slate-950 */
+            background-image: radial-gradient(circle at 1px 1px, #1e293b 1px, transparent 0);
+            background-size: 2rem 2rem;
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s ease-out forwards;
+        }
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-
-        .fade-in {
-            animation: fadeIn 0.9s ease-out forwards;
-        }
-
-        /* Delay for staggered animations */
-        .fade-in-delay-1 { animation-delay: 0.2s; }
-        .fade-in-delay-2 { animation-delay: 0.4s; }
-        .fade-in-delay-3 { animation-delay: 0.6s; }
-        .fade-in-delay-4 { animation-delay: 0.8s; }
     </style>
 </head>
-<body class="text-gray-800 gemini-gradient-bg">
+<body>
 
-    <!-- Main Container -->
-    <div class="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
-        
-        <div class="w-full max-w-4xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200/80">
-            <div class="p-8 sm:p-12 lg:p-16">
-
-                <!-- Header Section with Logo -->
-                <header class="flex justify-center mb-8 fade-in">
-                    <img src="QuantaQuest Logo 1.png" 
-                         alt="QuantaQuest Foundation Logo" 
-                         class="h-24 w-24 object-contain"
-                         onerror="this.onerror=null; this.src='https://placehold.co/96x96/4285F4/FFFFFF?text=QQF'; this.alt='QuantaQuest Foundation Placeholder Logo'">
-                </header>
-
+    <!-- START: Maintenance Overlay -->
+    <div id="maintenance-overlay" class="fixed inset-0 bg-black/20 flex items-center justify-center p-4 z-[100]">
+        <div class="w-full max-w-2xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden">
+            <div class="p-8 sm:p-12 text-center">
                 <!-- Main Content -->
-                <main class="text-center">
-
+                <main>
                     <!-- Maintenance Message -->
-                    <div class="mb-10">
-                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 fade-in fade-in-delay-1">Coming Soon</h1>
-                        <p class="text-lg sm:text-xl text-gray-700 max-w-2xl mx-auto fade-in fade-in-delay-2">
-                            Our website is currently being <span class="font-semibold text-blue-600">upgraded</span> to enhance your experience with our <span class="font-semibold text-green-600">community</span>. Please bear with us, <span class="font-semibold text-yellow-500">great things</span> are on the way. <span class="font-semibold text-red-600">Stay tuned!</span>
-                        </p>
-                    </div>
-
-                    <!-- Mission Section -->
-                    <div class="bg-slate-50 border border-gray-200/80 rounded-xl p-6 mb-10 fade-in fade-in-delay-3 text-left">
-                        <h2 class="text-2xl font-semibold text-blue-700 mb-3 text-center">Our Mission</h2>
-                        <p class="text-zinc-700 leading-relaxed">
-                            QuantaQuest Foundation is a non-profit social foundation committed to advancing education. We provide scholarships, awards, and support to high-achieving students from lower secondary to postgraduate levels in Ninh Binh province and across Vietnam, fostering learning and contributing to human resource quality for our homeland.
+                    <div class="mb-8">
+                        <h1 class="text-3xl sm:text-4xl font-bold text-slate-800 mb-4">Coming Soon!</h1>
+                        <p class="text-lg text-slate-600 max-w-xl mx-auto">
+                            Our website is currently being <span class="font-semibold text-blue-600">upgraded</span> and maintained to enhance your experience with our <span class="font-semibold text-green-600">community</span>. Please bear with us, <span class="font-semibold text-yellow-500">great things</span> are on the way. <span class="font-semibold text-red-600">Stay tuned!</span>
                         </p>
                     </div>
 
                     <!-- Contact Section -->
-                    <div class="fade-in fade-in-delay-4">
-                        <h3 class="text-xl font-semibold text-green-700 mb-3">Get In Touch</h3>
-                        <p class="text-zinc-600 mb-4">In the meantime, you can reach us at:</p>
+                    <div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-3">Get In Touch</h3>
+                        <p class="text-slate-500 mb-4">In the meantime, you can reach us at:</p>
                         <a href="mailto:quantaquestfoundation@gmail.com" 
-                           class="inline-block bg-blue-600 text-white font-medium py-3 px-8 rounded-lg shadow-sm hover:bg-blue-700 transition-all transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300/50">
+                           class="inline-block bg-indigo-600 text-white font-medium py-3 px-6 rounded-lg shadow-md hover:bg-indigo-700 transition-all transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-indigo-300/50">
                            quantaquestfoundation@gmail.com
                         </a>
                     </div>
                 </main>
-
             </div>
         </div>
-
-        <!-- Footer -->
-        <footer class="text-center mt-8 fade-in fade-in-delay-4">
-            <p class="text-gray-500">&copy; 2025 QuantaQuest Foundation. All rights reserved.</p>
-        </footer>
     </div>
+    <!-- END: Maintenance Overlay -->
 
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="#" class="flex items-center space-x-2">
+                        <img src="QuantaQuest Logo 1.png" alt="QuantaQuest Logo" class="h-6 w-6 text-indigo-600" />
+                        <span class="font-bold text-xl text-slate-800">QuantaQuest</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <nav class="flex items-center space-x-8">
+                        <a href="#about" class="text-slate-600 hover:text-indigo-600 transition-colors">About Us</a>
+                        <a href="#work" class="text-slate-600 hover:text-indigo-600 transition-colors">Our Work</a>
+                        <a href="#involved" class="text-slate-600 hover:text-indigo-600 transition-colors">Get Involved</a>
+                        <a href="#contact" class="text-slate-600 hover:text-indigo-600 transition-colors">Contact</a>
+                    </nav>
+                </div>
+                <div>
+                    <a href="#involved" class="hidden sm:inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg font-semibold shadow-md hover:bg-indigo-700 transition-all">
+                        Donate
+                    </a>
+                    <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-slate-600 hover:bg-slate-100">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden px-4 pt-2 pb-4 space-y-2 bg-white">
+            <a href="#about" class="block text-slate-600 hover:text-indigo-600 transition-colors py-2">About Us</a>
+            <a href="#work" class="block text-slate-600 hover:text-indigo-600 transition-colors py-2">Our Work</a>
+            <a href="#involved" class="block text-slate-600 hover:text-indigo-600 transition-colors py-2">Get Involved</a>
+            <a href="#contact" class="block text-slate-600 hover:text-indigo-600 transition-colors py-2">Contact</a>
+             <a href="#involved" class="block bg-indigo-600 text-white px-4 py-2 rounded-lg font-semibold shadow-md hover:bg-indigo-700 transition-all text-center">
+                Donate
+            </a>
+        </div>
+    </header>
+
+    <main class="pt-16">
+        <!-- Hero Section -->
+        <section class="hero-bg text-white py-20 sm:py-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tighter leading-tight">
+                    <span class="gradient-text">QuantaQuest Foundation</span>
+                </h1>
+                <p class="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-slate-300">
+                    A non-profit social foundation committed to advancing education and fostering learning for a brighter future in Vietnam.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="#work" class="bg-indigo-500 text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-indigo-600 transition-all shadow-lg">
+                        Explore Our Programs
+                    </a>
+                    <a href="#involved" class="bg-white/10 backdrop-blur-sm text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-white/20 transition-all">
+                        Get Involved
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Statement Section -->
+        <section id="about" class="py-20 bg-white section-fade-in" style="animation-delay: 200ms;">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Our Mission</h2>
+                    <p class="mt-4 text-lg text-slate-600">Fostering talent and empowering the next generation.</p>
+                </div>
+                <div class="mt-12 max-w-3xl mx-auto bg-slate-50 border border-slate-200 rounded-xl p-8 text-center shadow-sm">
+                   <i data-lucide="quote" class="w-12 h-12 text-indigo-200 mx-auto"></i>
+                    <p class="mt-4 text-lg md:text-xl text-slate-700 leading-relaxed">
+                        "QuantaQuest Foundation is committed to advancing education. We provide scholarships, awards, and support to high-achieving students from lower secondary to postgraduate levels in Ninh Binh province and across Vietnam, fostering learning and contributing to human resource quality for our homeland."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Work Section -->
+        <section id="work" class="py-20 bg-slate-50 section-fade-in" style="animation-delay: 400ms;">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">What We Do</h2>
+                    <p class="mt-4 text-lg text-slate-600">We create opportunities through dedicated programs.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card 1: Scholarships -->
+                    <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 card-hover">
+                        <div class="bg-indigo-100 text-indigo-600 rounded-lg w-12 h-12 flex items-center justify-center">
+                           <i data-lucide="graduation-cap"></i>
+                        </div>
+                        <h3 class="mt-6 text-xl font-bold text-slate-900">Scholarships</h3>
+                        <p class="mt-2 text-slate-600">Providing financial assistance to talented students, enabling them to pursue their educational goals without financial burden.</p>
+                    </div>
+                    <!-- Card 2: Awards -->
+                    <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 card-hover">
+                        <div class="bg-pink-100 text-pink-600 rounded-lg w-12 h-12 flex items-center justify-center">
+                             <i data-lucide="award"></i>
+                        </div>
+                        <h3 class="mt-6 text-xl font-bold text-slate-900">Awards & Recognition</h3>
+                        <p class="mt-2 text-slate-600">Celebrating academic excellence and outstanding achievements to motivate and inspire students to reach their full potential.</p>
+                    </div>
+                    <!-- Card 3: Support -->
+                    <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 card-hover">
+                       <div class="bg-emerald-100 text-emerald-600 rounded-lg w-12 h-12 flex items-center justify-center">
+                             <i data-lucide="heart-handshake"></i>
+                        </div>
+                        <h3 class="mt-6 text-xl font-bold text-slate-900">Mentorship & Support</h3>
+                        <p class="mt-2 text-slate-600">Offering guidance, mentorship, and essential resources to support students' personal and professional development.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Impact Section -->
+        <section class="py-20 bg-white section-fade-in" style="animation-delay: 600ms;">
+             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                   <div class="text-center mb-12">
+                     <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Our Impact</h2>
+                     <p class="mt-4 text-lg text-slate-600">Transforming lives, one student at a time.</p>
+                 </div>
+                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+                     <div class="bg-slate-50 p-8 rounded-xl border border-slate-200">
+                         <h3 class="text-5xl font-extrabold gradient-text">81</h3>
+                         <p class="mt-2 text-lg font-medium text-slate-700">Scholarships Awarded</p>
+                     </div>
+                     <div class="bg-slate-50 p-8 rounded-xl border border-slate-200">
+                         <h3 class="text-5xl font-extrabold gradient-text">285+</h3>
+                         <p class="mt-2 text-lg font-medium text-slate-700">Students Supported</p>
+                     </div>
+                     <div class="bg-slate-50 p-8 rounded-xl border border-slate-200">
+                         <h3 class="text-5xl font-extrabold gradient-text">4+</h3>
+                         <p class="mt-2 text-lg font-medium text-slate-700">Educational Partners</p>
+                     </div>
+                 </div>
+            </div>
+        </section>
+
+        <!-- Get Involved Section -->
+        <section id="involved" class="py-20 bg-slate-900 text-white section-fade-in" style="animation-delay: 800ms;">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Join Us in Our Mission</h2>
+                <p class="mt-4 text-lg text-slate-300">
+                    Your support can make a world of difference. Together, we can empower more students to build a better future for themselves and for Vietnam.
+                </p>
+                <div class="mt-10">
+                    <a href="#" class="bg-indigo-500 text-white px-10 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-600 transition-all shadow-lg">
+                        Make a Donation
+                    </a>
+                </div>
+                 <p class="mt-8 text-sm text-slate-400">
+                    Interested in volunteering or partnerships? <a href="#contact" class="underline hover:text-white">Contact us</a>.
+                </p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <footer id="contact" class="bg-slate-800 text-slate-300">
+            <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div>
+                        <a href="#" class="flex items-center space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-400"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                            <span class="font-bold text-xl text-white">QuantaQuest</span>
+                        </a>
+                        <p class="mt-4 text-slate-400">Advancing education for the next generation of leaders in Vietnam.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-white">Contact Us</h3>
+                        <ul class="mt-4 space-y-2 text-slate-400">
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                                <span>quantaquestfoundation@gmail.com</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="phone" class="w-5 h-5"></i>
+                                <span>0975445033</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                <span>Ninh Binh, Vietnam</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-white">Follow Us</h3>
+                        <div class="flex mt-4 space-x-4">
+                            <a href="#" class="text-slate-400 hover:text-white"><i data-lucide="facebook"></i></a>
+                            <a href="#" class="text-slate-400 hover:text-white"><i data-lucide="linkedin"></i></a>
+                            <a href="#" class="text-slate-400 hover:text-white"><i data-lucide="youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12 border-t border-slate-700 pt-8 text-center text-sm text-slate-500">
+                    <p>&copy; 2025 QuantaQuest Foundation. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                // Do not prevent default for the mailto link in the overlay
+                if(this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    
+                    // Do not scroll for overlay links
+                    if(this.closest('#maintenance-overlay')) return;
+
+                    const targetElement = document.querySelector(this.getAttribute('href'));
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+
+                    // Close mobile menu on link click
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const sections = document.querySelectorAll('.section-fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
