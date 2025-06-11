@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Work | QuantaQuest Foundation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+            color: #0f172a; /* slate-900 */
+        }
+        .hero-bg-work {
+            background-color: #f1f5f9; /* slate-100 */
+        }
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Interactive Timeline Styles */
+        .timeline-nav-item {
+            position: relative;
+            cursor: pointer;
+            padding-left: 2.5rem;
+            padding-bottom: 2.5rem;
+            transition: color 0.2s ease-in-out;
+        }
+        .timeline-nav-item:last-child {
+            padding-bottom: 0;
+        }
+        /* The vertical line */
+        .timeline-nav-item::before {
+            content: '';
+            position: absolute;
+            left: 0.45rem;
+            top: 0.5rem;
+            width: 2px;
+            height: calc(100% - 0.5rem);
+            background-color: #e2e8f0; /* slate-200 */
+        }
+        .timeline-nav-item:last-child::before {
+             display: none;
+        }
+        /* The dot on the line */
+        .timeline-dot {
+            position: absolute;
+            left: 0;
+            top: 0.25rem;
+            height: 1rem;
+            width: 1rem;
+            border-radius: 9999px;
+            border-width: 2px;
+            border-color: #e2e8f0; /* slate-200 */
+            background-color: #fff;
+            transition: all 0.2s ease-in-out;
+        }
+        .timeline-nav-item.active .timeline-dot,
+        .timeline-nav-item:hover .timeline-dot {
+            background-color: #4f46e5;
+            border-color: #4f46e5;
+            transform: scale(1.25);
+        }
+        .timeline-nav-item.active p {
+            color: #4f46e5;
+            font-weight: 600;
+        }
+        .post-content {
+            animation: contentFadeIn 0.5s ease-out forwards;
+        }
+        @keyframes contentFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        <span class="font-bold text-xl text-slate-800">QuantaQuest</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <nav class="flex items-center space-x-8">
+                        <a href="about.html" class="text-slate-600 hover:text-indigo-600 transition-colors">About Us</a>
+                        <a href="our-work.html" class="text-indigo-600 font-semibold transition-colors">Our Work</a>
+                        <a href="get-involved.html" class="text-slate-600 hover:text-indigo-600 transition-colors">Get Involved</a>
+                        <a href="contact.html" class="text-slate-600 hover:text-indigo-600 transition-colors">Contact</a>
+                    </nav>
+                </div>
+                <div>
+                    <a href="get-involved.html" class="hidden sm:inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg font-semibold shadow-md hover:bg-indigo-700 transition-all">
+                        Donate
+                    </a>
+                    <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-slate-600 hover:bg-slate-100">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden px-4 pt-2 pb-4 space-y-2 bg-white">
+            <a href="about.html" class="block text-slate-600 hover:text-indigo-600 transition-colors py-2">About Us</a>
+            <a href="our-work.html" class="block text-indigo-600 font-semibold py-2">Our Work</a>
+            <a href="get-involved.html" class="block text-slate-600 hover:text-indigo-600 transition-colors py-2">Get Involved</a>
+            <a href="contact.html" class="block text-slate-600 hover:text-indigo-600 transition-colors py-2">Contact</a>
+             <a href="get-involved.html" class="block bg-indigo-600 text-white px-4 py-2 rounded-lg font-semibold shadow-md hover:bg-indigo-700 transition-all text-center">
+                Donate
+            </a>
+        </div>
+    </header>
+
+    <main class="pt-16">
+        <!-- Page Header Section -->
+        <section class="hero-bg-work py-20 sm:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">Our Work & Activities</h1>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600">
+                    Explore our programs, events, and the impact we're making in communities across Vietnam.
+                </p>
+            </div>
+        </section>
+
+        <!-- Interactive Timeline Section -->
+        <section id="activities" class="py-20 bg-white section-fade-in">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12">
+                    <!-- Left Column: Timeline Navigation -->
+                    <div class="md:col-span-1 lg:col-span-1">
+                        <h2 class="text-2xl font-bold text-slate-800 mb-6">Activity Timeline</h2>
+                        <div id="timeline-nav">
+                            <!-- Timeline items will be dynamically managed by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Post Content Display -->
+                    <div id="posts-container" class="md:col-span-2 lg:col-span-3 bg-slate-50 p-8 rounded-xl border border-slate-200 min-h-[500px]">
+                        <!-- Post content will be injected here by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-slate-300">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                 <div>
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-400"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        <span class="font-bold text-xl text-white">QuantaQuest</span>
+                    </a>
+                    <p class="mt-4 text-slate-400">Advancing education for the next generation of leaders in Vietnam.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white">Contact Us</h3>
+                    <ul class="mt-4 space-y-2 text-slate-400">
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                            <span>contact@quantaquest.org</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="phone" class="w-5 h-5"></i>
+                            <span>(+84) 123 456 789</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            <span>Ninh Binh, Vietnam</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white">Follow Us</h3>
+                    <div class="flex mt-4 space-x-4">
+                        <a href="#" class="text-slate-400 hover:text-white"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-white"><i data-lucide="linkedin"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-white"><i data-lucide="youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-slate-700 pt-8 text-center text-sm text-slate-500">
+                <p>&copy; 2025 QuantaQuest Foundation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- Interactive Timeline Logic ---
+
+        const activitiesData = [
+            {
+                id: 'activity-1',
+                date: 'January 20, 2025',
+                title: 'Annual Scholarship Awards Ceremony',
+                image: 'https://placehold.co/800x500/4f46e5/ffffff?text=Scholarship+Ceremony',
+                content: 'Our flagship event where we awarded scholarships to 100 high-achieving students from across the country. The ceremony celebrated their hard work and dedication, and featured inspiring speeches from educational leaders and alumni.'
+            },
+            {
+                id: 'activity-2',
+                date: 'February 15, 2025',
+                title: 'STEM Workshop for High Schoolers',
+                image: 'https://placehold.co/800x500/ec4899/ffffff?text=STEM+Workshop',
+                content: 'In partnership with TechCorp Vietnam, we hosted a hands-on STEM workshop. Students learned about coding, robotics, and AI, sparking their interest in future technology careers.'
+            },
+            {
+                id: 'activity-3',
+                date: 'March 10, 2025',
+                title: 'Mentorship Program Kick-off',
+                image: 'https://placehold.co/800x500/10b981/ffffff?text=Mentorship+Program',
+                content: 'We successfully launched our mentorship program, pairing 50 university students with experienced professionals in their fields of study for a year of guidance and support.'
+            },
+            {
+                id: 'activity-4',
+                date: 'April 05, 2025',
+                title: 'Rural Library Project Inauguration',
+                image: 'https://placehold.co/800x500/f59e0b/ffffff?text=Library+Project',
+                content: 'The first of our five planned rural libraries opened its doors in Ha Giang province, providing over 2,000 books and computer access to local students and the community.'
+            },
+            {
+                id: 'activity-5',
+                date: 'May 22, 2025',
+                title: 'University Leadership Summit',
+                image: 'https://placehold.co/800x500/6366f1/ffffff?text=Leadership+Summit',
+                content: 'A two-day summit for our scholarship recipients focusing on developing leadership skills, public speaking, and project management through a series of interactive workshops and challenges.'
+            },
+            {
+                id: 'activity-6',
+                date: 'June 18, 2025',
+                title: 'Environmental Awareness Campaign',
+                image: 'https://placehold.co/800x500/22c55e/ffffff?text=Green+Campaign',
+                content: 'Students led a community-wide campaign promoting recycling and sustainability, culminating in a large-scale tree-planting event in Cuc Phuong National Park.'
+            },
+            {
+                id: 'activity-7',
+                date: 'July 29, 2025',
+                title: 'English Language Summer Camp',
+                image: 'https://placehold.co/800x500/d946ef/ffffff?text=English+Camp',
+                content: 'An immersive two-week summer camp for lower secondary students to improve their English proficiency through fun activities, games, and interaction with native speakers.'
+            },
+            {
+                id: 'activity-8',
+                date: 'August 14, 2025',
+                title: 'Career Fair & Networking Event',
+                image: 'https://placehold.co/800x500/8b5cf6/ffffff?text=Career+Fair',
+                content: 'We connected over 200 students with representatives from 30 leading companies, opening up internship and employment opportunities.'
+            },
+            {
+                id: 'activity-9',
+                date: 'September 09, 2025',
+                title: 'Fundraising Gala Dinner',
+                image: 'https://placehold.co/800x500/ef4444/ffffff?text=Fundraising+Gala',
+                content: 'Our annual gala brought together donors and partners, successfully raising funds to support our programs for the upcoming year and expand our reach to two new provinces.'
+            },
+            {
+                id: 'activity-10',
+                date: 'October 25, 2025',
+                title: 'Alumni Homecoming Day',
+                image: 'https://placehold.co/800x500/3b82f6/ffffff?text=Alumni+Homecoming',
+                content: 'A special event celebrating the achievements of our alumni network. Graduates shared their success stories, inspiring the current generation of QuantaQuest students.'
+            }
+        ];
+
+        const timelineNavContainer = document.getElementById('timeline-nav');
+        const postsContainer = document.getElementById('posts-container');
+
+        function displayPost(activityId) {
+            // Find the data for the selected activity
+            const activity = activitiesData.find(act => act.id === activityId);
+            if (!activity) return;
+
+            // Update the content in the right column
+            postsContainer.innerHTML = `
+                <div class="post-content">
+                    <p class="text-sm font-semibold text-indigo-600 mb-2">${activity.date}</p>
+                    <h2 class="text-3xl font-bold text-slate-800 mb-4">${activity.title}</h2>
+                    <img src="${activity.image}" alt="${activity.title}" class="w-full h-auto rounded-lg shadow-md mb-6">
+                    <p class="text-slate-600 leading-relaxed">${activity.content}</p>
+                </div>
+            `;
+            
+            // Update the active state in the timeline navigation
+            document.querySelectorAll('.timeline-nav-item').forEach(item => {
+                item.classList.remove('active');
+                if (item.dataset.target === activityId) {
+                    item.classList.add('active');
+                }
+            });
+        }
+
+        // Initialize the timeline navigation and set up event listeners
+        function initializeTimeline() {
+            // Populate the timeline navigation
+            activitiesData.forEach(activity => {
+                const navItem = document.createElement('div');
+                navItem.className = 'timeline-nav-item';
+                navItem.dataset.target = activity.id;
+                navItem.innerHTML = `
+                    <div class="timeline-dot"></div>
+                    <p class="text-slate-600">${activity.title}</p>
+                `;
+                timelineNavContainer.appendChild(navItem);
+            });
+
+            // Add a single event listener to the container
+            timelineNavContainer.addEventListener('click', (e) => {
+                const targetItem = e.target.closest('.timeline-nav-item');
+                if (targetItem) {
+                    displayPost(targetItem.dataset.target);
+                }
+            });
+
+            // Display the first post by default
+            if (activitiesData.length > 0) {
+                displayPost(activitiesData[0].id);
+            }
+        }
+
+        // Run the initialization
+        initializeTimeline();
+
+    </script>
+</body>
+</html>
