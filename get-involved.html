@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Involved | QuantaQuest Foundation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+            color: #0f172a; /* slate-900 */
+        }
+        .hero-bg-involved {
+            background-color: #f1f5f9; /* slate-100 */
+        }
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .step-item {
+            position: relative;
+            padding-left: 2.5rem;
+            padding-bottom: 2rem;
+        }
+        .step-item:last-child {
+            padding-bottom: 0;
+        }
+        .step-item::before {
+            content: attr(data-step);
+            position: absolute;
+            left: -0.25rem;
+            top: -0.25rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 9999px;
+            background-color: #4f46e5;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        <span class="font-bold text-xl text-slate-800">QuantaQuest</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <nav class="flex items-center space-x-8">
+                        <a href="about.html" class="text-slate-600 hover:text-indigo-600 transition-colors">About Us</a>
+                        <a href="our-work.html" class="text-slate-600 hover:text-indigo-600 transition-colors">Our Work</a>
+                        <a href="get-involved.html" class="text-indigo-600 font-semibold transition-colors">Get Involved</a>
+                        <a href="contact.html" class="text-slate-600 hover:text-indigo-600 transition-colors">Contact</a>
+                    </nav>
+                </div>
+                <div>
+                    <a href="#donate" class="hidden sm:inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg font-semibold shadow-md hover:bg-indigo-700 transition-all">
+                        Donate
+                    </a>
+                    <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-slate-600 hover:bg-slate-100">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden px-4 pt-2 pb-4 space-y-2 bg-white">
+            <a href="about.html" class="block text-slate-600 hover:text-indigo-600 transition-colors py-2">About Us</a>
+            <a href="our-work.html" class="block text-slate-600 hover:text-indigo-600 transition-colors py-2">Our Work</a>
+            <a href="get-involved.html" class="block text-indigo-600 font-semibold py-2">Get Involved</a>
+            <a href="contact.html" class="block text-slate-600 hover:text-indigo-600 transition-colors py-2">Contact</a>
+            <a href="#donate" class="block bg-indigo-600 text-white px-4 py-2 rounded-lg font-semibold shadow-md hover:bg-indigo-700 transition-all text-center">
+                Donate
+            </a>
+        </div>
+    </header>
+
+    <main class="pt-16">
+        <!-- Page Header Section -->
+        <section class="hero-bg-involved py-20 sm:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">Get Involved</h1>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600">
+                    Apply for a scholarship, become a partner, or donate to our cause. Your support helps us ignite the futures of talented students across Vietnam.
+                </p>
+            </div>
+        </section>
+
+        <!-- Scholarship Announcement Section -->
+        <section id="scholarship" class="py-20 bg-white section-fade-in">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-base font-semibold text-indigo-600 tracking-wider uppercase">Scholarship Announcement 2025</h2>
+                    <p class="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Nurturing Talent, Igniting Futures</p>
+                    <p class="mt-4 text-lg text-slate-600 leading-relaxed">
+                        The QuantaQuest Foundation, officially established in 2025, builds upon years of dedicated informal support. Our mission is to empower talented students from exceptionally disadvantaged backgrounds, enabling them to pursue higher education and realize their dreams. Beyond financial aid, QuantaQuest provides a supportive community where students can cultivate essential skills, enhance their knowledge, and gain valuable experience for their careers and lives.
+                    </p>
+                </div>
+
+                <!-- Key Details Cards -->
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                        <i data-lucide="award" class="w-10 h-10 text-indigo-500 mx-auto mb-3"></i>
+                        <h3 class="text-lg font-semibold text-slate-800">Scholarship Type</h3>
+                        <p class="mt-1 text-slate-600">Full scholarship for the entire duration of university studies.</p>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                        <i data-lucide="users" class="w-10 h-10 text-indigo-500 mx-auto mb-3"></i>
+                        <h3 class="text-lg font-semibold text-slate-800">Number of Awards</h3>
+                        <p class="mt-1 text-slate-600">60-80 scholarships available for the 2025 academic year.</p>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                        <i data-lucide="dollar-sign" class="w-10 h-10 text-indigo-500 mx-auto mb-3"></i>
+                        <h3 class="text-lg font-semibold text-slate-800">Scholarship Value</h3>
+                        <p class="mt-1 text-slate-600">Up to 30,000,000 VND per academic year.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Criteria Section -->
+        <section class="py-20 bg-slate-50 section-fade-in" style="animation-delay: 200ms;">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Application Criteria</h2>
+                    <p class="mt-4 text-lg text-slate-600">Applicants must meet the following criteria to be considered.</p>
+                </div>
+                <div class="mt-12 grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-xl border border-slate-200">
+                        <div class="flex items-center">
+                            <i data-lucide="home" class="w-8 h-8 text-indigo-500 mr-4"></i>
+                            <h3 class="text-xl font-semibold text-slate-800">Family Background</h3>
+                        </div>
+                        <p class="mt-4 text-slate-600">Students from exceptionally difficult family circumstances lacking the economic means to pursue university education. QuantaQuest will conduct direct home and local verification.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl border border-slate-200">
+                        <div class="flex items-center">
+                            <i data-lucide="graduation-cap" class="w-8 h-8 text-indigo-500 mr-4"></i>
+                            <h3 class="text-xl font-semibold text-slate-800">Academic Performance</h3>
+                        </div>
+                        <p class="mt-4 text-slate-600">Must have achieved at least "Advanced Student" status for three consecutive years in high school. Priority is given to students with higher achievements.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl border border-slate-200 md:col-span-2">
+                        <div class="flex items-center">
+                            <i data-lucide="clipboard-check" class="w-8 h-8 text-indigo-500 mr-4"></i>
+                            <h3 class="text-xl font-semibold text-slate-800">Award Conditions</h3>
+                        </div>
+                        <ul class="mt-4 text-slate-600 list-disc list-inside space-y-2">
+                            <li>Successful admission to a university is required.</li>
+                            <li>The student must not be receiving a full or regular scholarship from other organizations.</li>
+                            <li>Scholarships are contingent on maintaining "Good" academic and conduct performance.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Timeline Section -->
+        <section class="py-20 bg-white section-fade-in" style="animation-delay: 400ms;">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                 <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Application Process & Timeline</h2>
+                    <p class="mt-4 text-lg text-slate-600">Follow these steps to apply for the QuantaQuest 2025 scholarship.</p>
+                </div>
+                <div>
+                    <div class="step-item" data-step="1">
+                        <h3 class="text-xl font-bold text-slate-800 mb-1">Online Registration</h3>
+                        <p class="text-slate-600">Students must apply online via the official registration link. Ensure all required information and documents are attached. The application window is from <span class="font-semibold text-indigo-600">April 1, 2025, to May 10, 2025</span>.</p>
+                    </div>
+                    <div class="step-item" data-step="2">
+                        <h3 class="text-xl font-bold text-slate-800 mb-1">Results Announcement</h3>
+                        <p class="text-slate-600">The results of the registration round will be announced on the QuantaQuest website by <span class="font-semibold text-indigo-600">June 30, 2025</span>. Selected students will also receive an official notification letter.</p>
+                    </div>
+                     <div class="step-item" data-step="3">
+                        <h3 class="text-xl font-bold text-slate-800 mb-1">Final Submission</h3>
+                        <p class="text-slate-600">Selected applicants must submit hard copies of their application, university admission notice, and a signed commitment letter to formally receive the scholarship.</p>
+                    </div>
+                </div>
+                 <div class="mt-12 text-center">
+                    <a href="#" class="bg-indigo-600 text-white px-10 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition-all shadow-md">
+                        Apply Online Now
+                    </a>
+                    <p class="mt-4 text-sm text-slate-500">Applications open April 1, 2025.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Donation Section -->
+        <section id="donate" class="py-20 bg-slate-900 text-white section-fade-in" style="animation-delay: 600ms;">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Support Our Mission</h2>
+                <p class="mt-4 text-lg text-slate-300">
+                    Your contribution can change a life. Donate today to help us empower more students. We also welcome corporate partnerships and volunteers. Together, we can build a brighter future for Vietnam.
+                </p>
+                <div class="mt-10">
+                    <a href="#" class="bg-indigo-500 text-white px-10 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-600 transition-all shadow-lg">
+                        Make a Donation
+                    </a>
+                </div>
+                 <p class="mt-8 text-sm text-slate-400">
+                    To learn about partnerships, please <a href="contact.html" class="underline hover:text-white">contact us</a>.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-slate-300">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                 <div>
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-400"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        <span class="font-bold text-xl text-white">QuantaQuest</span>
+                    </a>
+                    <p class="mt-4 text-slate-400">Advancing education for the next generation of leaders in Vietnam.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white">Quick Links</h3>
+                     <ul class="mt-4 space-y-2 text-slate-400">
+                        <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="our-work.html" class="hover:text-white transition-colors">Our Work</a></li>
+                        <li><a href="get-involved.html" class="hover:text-white transition-colors">Apply / Donate</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white">Contact Info</h3>
+                    <ul class="mt-4 space-y-3 text-slate-400">
+                        <li class="flex items-start space-x-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 mt-1 flex-shrink-0"></i>
+                            <span>22 Ngo Quyen, Trang Tien Ward, Hoan Kiem District, Hanoi.</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="globe" class="w-5 h-5"></i>
+                            <a href="http://quantaquest.org.vn" class="hover:text-white">quantaquest.org.vn</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-slate-700 pt-8 text-center text-sm text-slate-500">
+                <p>&copy; 2025 QuantaQuest Foundation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetElement = document.querySelector(this.getAttribute('href'));
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations on sections
+        const sections = document.querySelectorAll('.section-fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
