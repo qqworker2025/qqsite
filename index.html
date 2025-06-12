@@ -92,7 +92,13 @@
         }
          .blended-gallery:hover img:not(:first-child) {
              margin-left: 1rem; /* Add a gap on hover */
-        }
+         }
+
+        /* Google-style colors for highlighted text */
+        .g-blue { color: #4285F4; }
+        .g-red { color: #DB4437; }
+        .g-yellow { color: #F4B400; }
+        .g-green { color: #0F9D58; }
 
     </style>
 </head>
@@ -167,9 +173,9 @@
         <section class="py-12 md:py-20 bg-white overflow-hidden section-fade-in" style="animation-delay: 200ms;">
             <div class="blended-gallery-container px-4">
                 <div class="blended-gallery">
-                    <img src="student1.png">
-                    <img src="student2.png">
-                    <img src="student3.png">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop" alt="Students studying together" onerror="this.onerror=null;this.src='student1.png';">
+                    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2070&auto=format&fit=crop" alt="A group of smiling students" onerror="this.onerror=null;this.src='student2.png';">
+                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop" alt="A student raising hand in class" onerror="this.onerror=null;this.src='student3.png';">
                 </div>
             </div>
         </section>
@@ -184,7 +190,7 @@
                 <div class="mt-12 max-w-3xl mx-auto bg-white border border-slate-200 rounded-xl p-8 text-center shadow-sm">
                    <i data-lucide="quote" class="w-12 h-12 text-indigo-200 mx-auto"></i>
                    <p class="mt-4 text-lg md:text-xl text-slate-700 leading-relaxed">
-                        "QuantaQuest Foundation is committed to advancing education. We provide scholarships, awards, and support to high-achieving students from lower secondary to postgraduate levels in Ninh Binh province and across Vietnam, fostering learning and contributing to human resource quality for our homeland."
+                        "QuantaQuest Foundation is committed to <span class="font-semibold g-blue">advancing education</span>. We provide <span class="font-semibold g-green">scholarships, awards, and support</span> to high-achieving students from lower secondary to postgraduate levels in Ninh Binh province and across Vietnam, <span class="font-semibold g-yellow">fostering learning</span> and contributing to <span class="font-semibold g-red">human resource quality</span> for our homeland."
                    </p>
                 </div>
             </div>
@@ -198,7 +204,7 @@
                         <img src="https://storage.googleapis.com/gemini-prod-us-east1-9556/uploaded/QuantaQuest%20Logo%201.jpg-d7b082dc-53f9-4da9-856a-736df99f434a" 
                              alt="QuantaQuest Foundation Logo" 
                              class="rounded-2xl shadow-xl mx-auto lg:mx-0 max-w-sm w-full"
-                             onerror="this.onerror=null; this.src='QuantaQuest Logo 1.png';">
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x600/e0e7ff/3730a3?text=Logo';">
                     </div>
                     <div>
                         <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">The Story Behind Our Logo</h2>
@@ -256,7 +262,7 @@
                     <!-- Card 2: Awards -->
                     <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 card-hover">
                         <div class="bg-pink-100 text-pink-600 rounded-lg w-12 h-12 flex items-center justify-center">
-                                <i data-lucide="award"></i>
+                                 <i data-lucide="award"></i>
                         </div>
                         <h3 class="mt-6 text-xl font-bold text-slate-900">Awards & Recognition</h3>
                         <p class="mt-2 text-slate-600">Celebrating academic excellence and outstanding achievements to motivate and inspire students to reach their full potential.</p>
