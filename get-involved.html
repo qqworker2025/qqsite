@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- The aspect-ratio plugin is needed for the square images -->
+    <script src="https://cdn.tailwindcss.com/3.3.3?plugins=aspect-ratio"></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -33,35 +35,39 @@
             position: relative;
             padding-left: 2.5rem;
             padding-bottom: 2rem;
+            border-left: 2px solid #e2e8f0; /* slate-200 */
+            margin-left: 1.15rem;
         }
         .step-item:last-child {
             padding-bottom: 0;
+            border-left: 2px solid transparent;
         }
         .step-item::before {
             content: attr(data-step);
             position: absolute;
-            left: -0.25rem;
+            left: -1.25rem;
             top: -0.25rem;
             width: 2.5rem;
             height: 2.5rem;
             border-radius: 9999px;
-            background-color: #4f46e5;
+            background-color: #4f46e5; /* indigo-600 */
             color: white;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
+            z-index: 10;
         }
     </style>
 </head>
-<body>
+<body class="antialiased">
     <!-- Header -->
     <header class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex-shrink-0">
                     <a href="index.html" class="flex items-center space-x-2">
-                        <img src="quantaquest logo2.png" alt="QuantaQuest Logo" class="w-8 h-8">
+                        <img src="https://placehold.co/32x32/4f46e5/ffffff?text=QQ" alt="QuantaQuest Logo" class="w-8 h-8 rounded-full">
                         <span class="font-bold text-xl text-slate-800">QuantaQuest</span>
                     </a>
                 </div>
@@ -84,12 +90,12 @@
             </div>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden hidden px-4 pt-2 pb-4 space-y-2 bg-white">
+        <div id="mobile-menu" class="md:hidden hidden px-4 pt-2 pb-4 space-y-2 bg-white border-t border-slate-200">
             <a href="about.html" class="block text-slate-600 hover:text-indigo-600 transition-colors py-2">About Us</a>
             <a href="our-work.html" class="block text-slate-600 hover:text-indigo-600 transition-colors py-2">Our Work</a>
             <a href="get-involved.html" class="block text-indigo-600 font-semibold py-2">Get Involved</a>
             <a href="contact.html" class="block text-slate-600 hover:text-indigo-600 transition-colors py-2">Contact</a>
-            <a href="#donate" class="block bg-indigo-600 text-white px-4 py-2 rounded-lg font-semibold shadow-md hover:bg-indigo-700 transition-all text-center">
+            <a href="#donate" class="block bg-indigo-600 text-white px-4 py-2 rounded-lg font-semibold shadow-md hover:bg-indigo-700 transition-all text-center mt-2">
                 Donate
             </a>
         </div>
@@ -113,7 +119,7 @@
                     <h2 class="text-base font-semibold text-indigo-600 tracking-wider uppercase">Scholarship Announcement 2025</h2>
                     <p class="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Nurturing Talent, Igniting Futures</p>
                     <p class="mt-4 text-lg text-slate-600 leading-relaxed">
-                        The QuantaQuest Foundation, officially established in 2025, builds upon years of dedicated informal support. Our mission is to empower talented students from exceptionally disadvantaged backgrounds, enabling them to pursue higher education and realize their dreams. Beyond financial aid, QuantaQuest provides a supportive community where students can cultivate essential skills, enhance their knowledge, and gain valuable experience for their careers and lives.
+                        The QuantaQuest Foundation, officially established in 2025, builds upon years of dedicated informal support. Our mission is to empower talented students from disadvantaged backgrounds, enabling them to pursue higher education and realize their dreams. Beyond financial aid, QuantaQuest provides a supportive community where students can cultivate essential skills, enhance their knowledge, and gain valuable experience for their careers and lives.
                     </p>
                 </div>
 
@@ -122,7 +128,7 @@
                     <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
                         <i data-lucide="award" class="w-10 h-10 text-indigo-500 mx-auto mb-3"></i>
                         <h3 class="text-lg font-semibold text-slate-800">Scholarship Type</h3>
-                        <p class="mt-1 text-slate-600">Full scholarship for the entire duration of university studies.</p>
+                        <p class="mt-1 text-slate-600">Full scholarship for the entire duration of university/high school studies.</p>
                     </div>
                     <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
                         <i data-lucide="users" class="w-10 h-10 text-indigo-500 mx-auto mb-3"></i>
@@ -138,35 +144,52 @@
             </div>
         </section>
 
+        <!-- Image Gallery Section -->
+        <section class="py-16 bg-slate-50 section-fade-in" style="animation-delay: 100ms;">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
+                    <div class="aspect-w-1 aspect-h-1">
+                        <img src="student4.png" alt="Placeholder image of a student" class="w-full h-full object-cover rounded-xl shadow-md transform hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="aspect-w-1 aspect-h-1">
+                        <img src="student6.png" alt="Placeholder image of a student" class="w-full h-full object-cover rounded-xl shadow-md transform hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="aspect-w-1 aspect-h-1">
+                        <img src="student7.png" alt="Placeholder image of a student" class="w-full h-full object-cover rounded-xl shadow-md transform hover:scale-105 transition-transform duration-300">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <!-- Application Criteria Section -->
-        <section class="py-20 bg-slate-50 section-fade-in" style="animation-delay: 200ms;">
+        <section class="py-20 bg-white section-fade-in" style="animation-delay: 200ms;">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center">
                     <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Application Criteria</h2>
                     <p class="mt-4 text-lg text-slate-600">Applicants must meet the following criteria to be considered.</p>
                 </div>
                 <div class="mt-12 grid md:grid-cols-2 gap-8">
-                    <div class="bg-white p-8 rounded-xl border border-slate-200">
+                    <div class="bg-slate-50 p-8 rounded-xl border border-slate-200">
                         <div class="flex items-center">
                             <i data-lucide="home" class="w-8 h-8 text-indigo-500 mr-4"></i>
                             <h3 class="text-xl font-semibold text-slate-800">Family Background</h3>
                         </div>
-                        <p class="mt-4 text-slate-600">Students from exceptionally difficult family circumstances lacking the economic means to pursue university education. QuantaQuest will conduct direct home and local verification.</p>
+                        <p class="mt-4 text-slate-600">Students from difficult family circumstances lacking the economic means to pursue university/high school education. QuantaQuest will conduct direct home and local verification.</p>
                     </div>
-                    <div class="bg-white p-8 rounded-xl border border-slate-200">
+                    <div class="bg-slate-50 p-8 rounded-xl border border-slate-200">
                         <div class="flex items-center">
                             <i data-lucide="graduation-cap" class="w-8 h-8 text-indigo-500 mr-4"></i>
                             <h3 class="text-xl font-semibold text-slate-800">Academic Performance</h3>
                         </div>
                         <p class="mt-4 text-slate-600">Must have achieved at least "Advanced Student" status for three consecutive years in high school. Priority is given to students with higher achievements.</p>
                     </div>
-                    <div class="bg-white p-8 rounded-xl border border-slate-200 md:col-span-2">
+                    <div class="bg-slate-50 p-8 rounded-xl border border-slate-200 md:col-span-2">
                         <div class="flex items-center">
                             <i data-lucide="clipboard-check" class="w-8 h-8 text-indigo-500 mr-4"></i>
                             <h3 class="text-xl font-semibold text-slate-800">Award Conditions</h3>
                         </div>
                         <ul class="mt-4 text-slate-600 list-disc list-inside space-y-2">
-                            <li>Successful admission to a university is required.</li>
+                            <li>Successful admission to a university/high school is required.</li>
                             <li>The student must not be receiving a full or regular scholarship from other organizations.</li>
                             <li>Scholarships are contingent on maintaining "Good" academic and conduct performance.</li>
                         </ul>
@@ -176,31 +199,31 @@
         </section>
 
         <!-- Application Timeline Section -->
-        <section class="py-20 bg-white section-fade-in" style="animation-delay: 400ms;">
+        <section class="py-20 bg-slate-50 section-fade-in" style="animation-delay: 400ms;">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                  <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Application Process & Timeline</h2>
                     <p class="mt-4 text-lg text-slate-600">Follow these steps to apply for the QuantaQuest 2025 scholarship.</p>
                 </div>
-                <div>
+                <div class="relative">
                     <div class="step-item" data-step="1">
                         <h3 class="text-xl font-bold text-slate-800 mb-1">Online Registration</h3>
-                        <p class="text-slate-600">Students must apply online via the official registration link. Ensure all required information and documents are attached. The application window is from <span class="font-semibold text-indigo-600">April 1, 2025, to May 10, 2025</span>.</p>
+                        <p class="text-slate-600">Students must apply online via the official registration link. Ensure all required information and documents are attached. The application window is from <span class="font-semibold text-indigo-600">July 1, 2025, to August 10, 2025</span>.</p>
                     </div>
                     <div class="step-item" data-step="2">
                         <h3 class="text-xl font-bold text-slate-800 mb-1">Results Announcement</h3>
-                        <p class="text-slate-600">The results of the registration round will be announced on the QuantaQuest website by <span class="font-semibold text-indigo-600">June 30, 2025</span>. Selected students will also receive an official notification letter.</p>
+                        <p class="text-slate-600">The results of the registration round will be announced on the QuantaQuest website by <span class="font-semibold text-indigo-600">September 30, 2025</span>. Selected students will also receive an official notification letter.</p>
                     </div>
                      <div class="step-item" data-step="3">
                         <h3 class="text-xl font-bold text-slate-800 mb-1">Final Submission</h3>
-                        <p class="text-slate-600">Selected applicants must submit hard copies of their application, university admission notice, and a signed commitment letter to formally receive the scholarship.</p>
+                        <p class="text-slate-600">Selected applicants must submit hard copies of their application, university/high school admission notice, and a signed commitment letter to formally receive the scholarship.</p>
                     </div>
                 </div>
                  <div class="mt-12 text-center">
                     <a href="#" class="bg-indigo-600 text-white px-10 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition-all shadow-md">
                         Apply Online Now
                     </a>
-                    <p class="mt-4 text-sm text-slate-500">Applications open April 1, 2025.</p>
+                    <p class="mt-4 text-sm text-slate-500">Applications open July 1, 2025.</p>
                 </div>
             </div>
         </section>
@@ -226,51 +249,51 @@
     </main>
 
       <!-- Footer -->
-        <footer id="contact" class="bg-slate-800 text-slate-300">
-            <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div>
-                        <!-- Updated footer logo link -->
-                        <a href="index.html" class="flex items-center space-x-2">
-                            <img src="quantaquest logo2.png" alt="QuantaQuest Logo" class="w-8 h-8">
-                            <span class="font-bold text-xl text-white">QuantaQuest</span>
-                        </a>
-                        <p class="mt-4 text-slate-400">Advancing education for the next generation of leaders in Vietnam.</p>
-                        <p class="mt-4 text-slate-400">Registry ID: 5039/QD-UBND</p>
-                        <p class="mt-4 text-slate-400">Registry: People's Committee of Ninh Binh Province</p>
-                        <p class="mt-4 text-slate-400">Postal Code: 430000</p>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-semibold text-white">Contact Us</h3>
-                        <ul class="mt-4 space-y-2 text-slate-400">
-                            <li class="flex items-center space-x-3">
-                                <i data-lucide="mail" class="w-5 h-5"></i>
-                                <span>info@quantaquest.org</span>
-                            </li>
-                            <li class="flex items-center space-x-3">
-                                <i data-lucide="phone" class="w-5 h-5"></i>
-                                <span>(+84) 0975 44 50 33</span>
-                            </li>
-                            <li class="flex items-center space-x-3">
-                                <i data-lucide="map-pin" class="w-5 h-5"></i>
-                                <span>Ninh Binh, Vietnam</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-semibold text-white">Follow Us</h3>
-                        <div class="flex mt-4 space-x-4">
-                            <a href="#" class="text-slate-400 hover:text-white"><i data-lucide="facebook"></i></a>
-                            <a href="#" class="text-slate-400 hover:text-white"><i data-lucide="linkedin"></i></a>
-                            <a href="#" class="text-slate-400 hover:text-white"><i data-lucide="youtube"></i></a>
-                        </div>
-                    </div>
+    <footer id="contact" class="bg-slate-800 text-slate-300">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <!-- Updated footer logo link -->
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <img src="https://placehold.co/32x32/4f46e5/ffffff?text=QQ" alt="QuantaQuest Logo" class="w-8 h-8 rounded-full">
+                        <span class="font-bold text-xl text-white">QuantaQuest</span>
+                    </a>
+                    <p class="mt-4 text-slate-400">Advancing education for the next generation of leaders in Vietnam.</p>
+                    <p class="mt-4 text-slate-400">Registry ID: 5039/QD-UBND</p>
+                    <p class="mt-4 text-slate-400">Registry: People's Committee of Ninh Binh Province</p>
+                    <p class="mt-4 text-slate-400">Postal Code: 430000</p>
                 </div>
-                <div class="mt-12 border-t border-slate-700 pt-8 text-center text-sm text-slate-500">
-                    <p>&copy; 2025 QuantaQuest Foundation. All rights reserved.</p>
+                <div>
+                    <h3 class="text-lg font-semibold text-white">Contact Us</h3>
+                    <ul class="mt-4 space-y-2 text-slate-400">
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                            <span>info@quantaquest.org</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="phone" class="w-5 h-5"></i>
+                            <span>(+84) 0975 44 50 33</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            <span>Ninh Binh, Vietnam</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white">Follow Us</h3>
+                    <div class="flex mt-4 space-x-4">
+                        <a href="#" class="text-slate-400 hover:text-white"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-white"><i data-lucide="linkedin"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-white"><i data-lucide="youtube"></i></a>
+                    </div>
                 </div>
             </div>
-        </footer>
+            <div class="mt-12 border-t border-slate-700 pt-8 text-center text-sm text-slate-500">
+                <p>&copy; 2025 QuantaQuest Foundation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
 
     <script>
@@ -302,7 +325,8 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.animationPlayState = 'running';
+                    // entry.target.style.animationPlayState = 'running'; // This can be removed, it's default
+                    entry.target.classList.add('is-visible');
                     observer.unobserve(entry.target);
                 }
             });
