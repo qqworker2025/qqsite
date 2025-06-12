@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | QuantaQuest Foundation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+            color: #0f172a; /* slate-900 */
+        }
+        .hero-bg-contact {
+            background-color: #f1f5f9; /* slate-100 */
+        }
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .form-input {
+            transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .form-input:focus {
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.3);
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        <span class="font-bold text-xl text-slate-800">QuantaQuest</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <nav class="flex items-center space-x-8">
+                        <a href="about.html" class="text-slate-600 hover:text-indigo-600 transition-colors">About Us</a>
+                        <a href="our-work.html" class="text-slate-600 hover:text-indigo-600 transition-colors">Our Work</a>
+                        <a href="get-involved.html" class="text-slate-600 hover:text-indigo-600 transition-colors">Get Involved</a>
+                        <a href="contact.html" class="text-indigo-600 font-semibold transition-colors">Contact</a>
+                    </nav>
+                </div>
+                <div>
+                    <a href="get-involved.html#donate" class="hidden sm:inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg font-semibold shadow-md hover:bg-indigo-700 transition-all">
+                        Donate
+                    </a>
+                    <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-slate-600 hover:bg-slate-100">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden px-4 pt-2 pb-4 space-y-2 bg-white">
+            <a href="about.html" class="block text-slate-600 hover:text-indigo-600 transition-colors py-2">About Us</a>
+            <a href="our-work.html" class="block text-slate-600 hover:text-indigo-600 transition-colors py-2">Our Work</a>
+            <a href="get-involved.html" class="block text-slate-600 hover:text-indigo-600 transition-colors py-2">Get Involved</a>
+            <a href="contact.html" class="block text-indigo-600 font-semibold py-2">Contact</a>
+            <a href="get-involved.html#donate" class="block bg-indigo-600 text-white px-4 py-2 rounded-lg font-semibold shadow-md hover:bg-indigo-700 transition-all text-center">
+                Donate
+            </a>
+        </div>
+    </header>
+
+    <main class="pt-16">
+        <!-- Page Header Section -->
+        <section class="hero-bg-contact py-20 sm:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">Get In Touch</h1>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600">
+                    We'd love to hear from you. Whether you have a question about our programs, partnerships, or anything else, our team is ready to answer all your questions.
+                </p>
+            </div>
+        </section>
+
+        <!-- Contact Information & Donation Section -->
+        <section class="py-20 bg-white section-fade-in">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Left Column: Contact Details -->
+                    <div>
+                        <h2 class="text-3xl font-bold text-slate-800">Contact Information</h2>
+                        <p class="mt-3 text-lg text-slate-600">Reach out to us through any of the following channels. We look forward to connecting with you.</p>
+                        
+                        <div class="mt-8 space-y-6">
+                            <!-- General Inquiries -->
+                            <div class="flex items-start">
+                                <i data-lucide="mailbox" class="w-7 h-7 text-indigo-600 flex-shrink-0 mt-1"></i>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-semibold text-slate-800">General Inquiries</h3>
+                                    <p class="text-slate-600">For general questions, information, or feedback.</p>
+                                    <a href="mailto:info@quantaquest.org" class="text-indigo-600 hover:text-indigo-800 transition-colors">info@quantaquest.org</a>
+                                </div>
+                            </div>
+
+                             <!-- Phone -->
+                            <div class="flex items-start">
+                                <i data-lucide="phone" class="w-7 h-7 text-indigo-600 flex-shrink-0 mt-1"></i>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-semibold text-slate-800">Phone</h3>
+                                    <p class="text-slate-600">Give us a call during office hours (Mon-Fri, 9am-5pm).</p>
+                                    <a href="tel:0975372569" class="text-indigo-600 hover:text-indigo-800 transition-colors">0975 372 569</a>
+                                </div>
+                            </div>
+
+                             <!-- Founder Contact -->
+                            <div class="flex items-start">
+                                <i data-lucide="user-check" class="w-7 h-7 text-indigo-600 flex-shrink-0 mt-1"></i>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-semibold text-slate-800">Founder & Director</h3>
+                                    <p class="text-slate-600">For specific requests or partnership proposals, please contact:</p>
+                                    <p class="font-medium text-slate-700">Mr. Tran Song Tung</p>
+                                    <a href="mailto:admin@quantaquest.org" class="text-indigo-600 hover:text-indigo-800 transition-colors">admin@quantaquest.org</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Address -->
+                            <div class="flex items-start">
+                                <i data-lucide="map-pin" class="w-7 h-7 text-indigo-600 flex-shrink-0 mt-1"></i>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-semibold text-slate-800">Our Address</h3>
+                                    <p class="text-slate-600">Xuan Que hamlet, Quynh Luu commune, Nho Quan district, Ninh Binh province.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Donation Information -->
+                    <div class="bg-slate-50 p-8 rounded-xl border border-slate-200">
+                        <h2 class="text-3xl font-bold text-slate-800">Support Our Mission</h2>
+                        <p class="mt-3 text-lg text-slate-600">Your generosity empowers the next generation of leaders. Please consider donating via bank transfer.</p>
+                        
+                        <div class="mt-8 bg-white p-6 rounded-lg border border-indigo-200">
+                            <h3 class="text-xl font-semibold text-indigo-700 text-center mb-4">Bank Donation Details</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <i data-lucide="landmark" class="w-6 h-6 text-slate-500 mr-4"></i>
+                                    <div>
+                                        <p class="text-sm text-slate-500">Bank Name</p>
+                                        <p class="font-semibold text-slate-700">Bank for Investment and Development of VietNam JSC (BIDV)</p>
+                                    </div>
+                                </div>
+                                <div class="border-t border-slate-200"></div>
+                                 <div class="flex items-center">
+                                    <i data-lucide="user-circle" class="w-6 h-6 text-slate-500 mr-4"></i>
+                                    <div>
+                                        <p class="text-sm text-slate-500">Account Name</p>
+                                        <p class="font-semibold text-slate-700">QUANTAQUEST FOUNDATION</p>
+                                    </div>
+                                </div>
+                                <div class="border-t border-slate-200"></div>
+                                <div class="flex items-center">
+                                    <i data-lucide="hash" class="w-6 h-6 text-slate-500 mr-4"></i>
+                                    <div>
+                                        <p class="text-sm text-slate-500">Account Number</p>
+                                        <p class="font-semibold text-slate-700 text-lg">43110005919999</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mt-6 text-center text-sm text-slate-500">Every contribution, no matter the size, makes a significant difference in a student's life. Thank you for your support!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="section-fade-in" style="animation-delay: 200ms;">
+             <div class="w-full">
+                <iframe 
+                    class="w-full h-96"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3744.40112836248!2d105.73359631535497!3d20.19941198642398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313665a39643435b%3A0x6b49e31a1a63b069!2zUXXhu7NuaCBMxrB1LCBOaG8gUXVhbiBEaXN0cmljdCwgTmluaCBCw6xuaCwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1672995512345!5m2!1sen!2s" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-slate-300">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                 <div>
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-400"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        <span class="font-bold text-xl text-white">QuantaQuest</span>
+                    </a>
+                    <p class="mt-4 text-slate-400">Advancing education for the next generation of leaders in Vietnam.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white">Quick Links</h3>
+                     <ul class="mt-4 space-y-2 text-slate-400">
+                        <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="our-work.html" class="hover:text-white transition-colors">Our Work</a></li>
+                        <li><a href="get-involved.html" class="hover:text-white transition-colors">Apply / Donate</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h3 class="text-lg font-semibold text-white">Follow Us</h3>
+                    <div class="flex mt-4 space-x-4">
+                        <a href="#" class="text-slate-400 hover:text-white"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-white"><i data-lucide="linkedin"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-white"><i data-lucide="youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-slate-700 pt-8 text-center text-sm text-slate-500">
+                <p>&copy; 2025 QuantaQuest Foundation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Intersection Observer for fade-in animations on sections
+        const sections = document.querySelectorAll('.section-fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
