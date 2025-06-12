@@ -396,8 +396,65 @@
             }
         }
 
-        // Run the initialization
-        initializeTimeline();
+
+                // --- Outstanding Students Grid Logic ---
+        function initializeStudentGrid() {
+            const studentGrid = document.getElementById('student-grid');
+            const students = [
+                { name: 'Nguyen Van An', school: 'Hanoi University of Science', img: 'https://images.unsplash.com/photo-1582516424-9616d2110a5b?q=80&w=1887&auto=format&fit=crop' },
+                { name: 'Tran Thi Binh', school: 'Vietnam National University, HCM', img: 'https://images.unsplash.com/photo-1594409856374-29729a8a251c?q=80&w=1887&auto=format&fit=crop' },
+                { name: 'Le Hoang Can', school: 'Da Nang University of Technology', img: 'https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=2070&auto=format&fit=crop' },
+                { name: 'Pham My Dung', school: 'Can Tho University', img: 'https://images.unsplash.com/photo-1622463097238-a3f28783451b?q=80&w=1887&auto=format&fit=crop' },
+                { name: 'Vo Thanh Em', school: 'Hue University of Sciences', img: 'https://images.unsplash.com/photo-1571260899304-425eee4c7efc?q=80&w=1887&auto=format&fit=crop' },
+                { name: 'Do Gia Han', school: 'Foreign Trade University', img: 'https://images.unsplash.com/photo-1599424003340-0865a78c1a5b?q=80&w=1887&auto=format&fit=crop' },
+                { name: 'Hoang Kim', school: 'National Economics University', img: 'https://images.unsplash.com/photo-1558004593-3a72d3a9497e?q=80&w=1887&auto=format&fit=crop' },
+                { name: 'Ly Minh Long', school: 'FPT University', img: 'https://images.unsplash.com/photo-1627541594329-0a7c5b163da1?q=80&w=1887&auto=format&fit=crop' },
+                { name: 'Mai Ngoc Mai', school: 'RMIT University Vietnam', img: 'https://images.unsplash.com/photo-1541178735492-de7ae4cb5746?q=80&w=1894&auto=format&fit=crop' },
+                { name: 'Ngo Phuc Nam', school: 'University of Medicine and Pharmacy', img: 'https://images.unsplash.com/photo-1618844853198-38600869a139?q=80&w=1887&auto=format&fit=crop' },
+                { name: 'Phan Quynh', school: 'Academy of Finance', img: 'https://images.unsplash.com/photo-1581492257914-8785a2d6191f?q=80&w=1887&auto=format&fit=crop' },
+                { name: 'Vu Son', school: 'Banking Academy of Vietnam', img: 'https://images.unsplash.com/photo-1627541629859-9a00f1c9af46?q=80&w=1887&auto=format&fit=crop' },
+                { name: 'Trinh Uyen', school: 'Hanoi Medical University', img: 'https://images.unsplash.com/photo-1627541629828-a579e0a2c092?q=80&w=1887&auto=format&fit=crop' },
+                { name: 'Dang Viet', school: 'Posts and Telecommunications Institute', img: 'https://images.unsplash.com/photo-1581491717753-535a77c570f7?q=80&w=1887&auto=format&fit=crop' },
+                { name: 'Bui Xuan', school: 'Thuyloi University', img: 'https://images.unsplash.com/photo-1618844853051-5e92759e6918?q=80&w=1887&auto=format&fit=crop' },
+                { name: 'Dao Yen', school: 'University of Languages', img: 'https://images.unsplash.com/photo-1627541594331-56271b194553?q=80&w=1887&auto=format&fit=crop' },
+                { name: 'Ho Minh Khai', school: 'Hanoi Law University', img: 'https://images.unsplash.com/photo-1594837894393-8b1784620b41?q=80&w=1887&auto=format&fit=crop' },
+                { name: 'Lam Phuong', school: 'University of Social Sciences', img: 'https://images.unsplash.com/photo-1599423921575-b91b988f572a?q=80&w=1887&auto=format&fit=crop' },
+                { name: 'Ninh Quoc', school: 'Electric Power University', img: 'https://images.unsplash.com/photo-1599424003349-5e92759e69f8?q=80&w=1887&auto=format&fit=crop' },
+                { name: 'On Phat', school: 'University of Transport', img: 'https://images.unsplash.com/photo-1618844853198-38600869a139?q=80&w=1887&auto=format&fit=crop' },
+                { name: 'Quach Thao', school: 'Hanoi Architectural University', img: 'https://images.unsplash.com/photo-1627541594329-0a7c5b163da1?q=80&w=1887&auto=format&fit=crop' },
+                { name: 'Sam Tuan', school: 'Vietnam Maritime University', img: 'https://images.unsplash.com/photo-1582516424-9616d2110a5b?q=80&w=1887&auto=format&fit=crop' },
+                { name: 'To Van', school: 'Thai Nguyen University', img: 'https://images.unsplash.com/photo-1594409856374-29729a8a251c?q=80&w=1887&auto=format&fit=crop' },
+                { name: 'Ung Bao', school: 'Vinh University', img: 'https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=2070&auto=format&fit=crop' },
+                { name: 'Vong Chi', school: 'Hong Duc University', img: 'https://images.unsplash.com/photo-1622463097238-a3f28783451b?q=80&w=1887&auto=format&fit=crop' },
+                { name: 'Xa Dieu', school: 'Quy Nhon University', img: 'https://images.unsplash.com/photo-1571260899304-425eee4c7efc?q=80&w=1887&auto=format&fit=crop' },
+                { name: 'Yen Binh', school: 'Tay Nguyen University', img: 'https://images.unsplash.com/photo-1599424003340-0865a78c1a5b?q=80&w=1887&auto=format&fit=crop' },
+                { name: 'Duong Anh', school: 'An Giang University', img: 'https://images.unsplash.com/photo-1558004593-3a72d3a9497e?q=80&w=1887&auto=format&fit=crop' },
+                { name: 'Chau Cam', school: 'Thu Dau Mot University', img: 'https://images.unsplash.com/photo-1627541629859-9a00f1c9af46?q=80&w=1887&auto=format&fit=crop' },
+                { name: 'Giang Dat', school: 'Ton Duc Thang University', img: 'https://images.unsplash.com/photo-1541178735492-de7ae4cb5746?q=80&w=1894&auto=format&fit=crop' }
+            ];
+
+            students.forEach(student => {
+                const studentCard = document.createElement('div');
+                studentCard.className = 'student-card text-center';
+                studentCard.innerHTML = `
+                    <img src="${student.img}" 
+                         alt="Profile photo of ${student.name}" 
+                         class="w-24 h-24 sm:w-28 sm:h-28 mx-auto rounded-full border-4 border-white shadow-lg object-cover"
+                         onerror="this.onerror=null;this.src='https://placehold.co/128x128/e0e7ff/4f46e5?text=${student.name.charAt(0)}';">
+                    <h3 class="mt-4 font-semibold text-slate-800 text-base">${student.name}</h3>
+                    <p class="text-sm text-slate-500">${student.school}</p>
+                `;
+                studentGrid.appendChild(studentCard);
+            });
+        }
+
+        // Run initializations
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeTimeline();
+            initializeStudentGrid();
+        });
+
+
 
     </script>
 </body>
