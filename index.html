@@ -43,6 +43,57 @@
                 transform: translateY(0);
             }
         }
+        
+        /* Styles for the blended image gallery */
+        .blended-gallery-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .blended-gallery {
+            display: flex;
+            width: 100%;
+            max-width: 1000px;
+            justify-content: center;
+        }
+
+        .blended-gallery img {
+            height: 400px;
+            width: 40%; /* Each image has a base width to allow overlap */
+            object-fit: cover;
+            flex-shrink: 0;
+            -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+            transition: all 0.5s ease;
+        }
+
+        .blended-gallery img:not(:first-child) {
+            margin-left: -20%; /* Overlap percentage for 3 images */
+        }
+
+        /* Remove fade from outer edges */
+        .blended-gallery img:first-child {
+            -webkit-mask-image: linear-gradient(to right, black 80%, transparent);
+            mask-image: linear-gradient(to right, black 80%, transparent);
+        }
+
+        .blended-gallery img:last-child {
+            -webkit-mask-image: linear-gradient(to left, black 80%, transparent);
+            mask-image: linear-gradient(to left, black 80%, transparent);
+        }
+
+        /* Hover effect to reveal full images */
+        .blended-gallery:hover img {
+            -webkit-mask-image: none;
+            mask-image: none;
+            margin-left: 0;
+            width: 32%; /* Adjusted for 3 images */
+            border-radius: 0.75rem; /* rounded-xl */
+        }
+         .blended-gallery:hover img:not(:first-child) {
+             margin-left: 1rem; /* Add a gap on hover */
+        }
+
     </style>
 </head>
 <body>
@@ -53,7 +104,7 @@
                 <div class="flex-shrink-0">
                     <!-- Changed link to point to index.html -->
                     <a href="index.html" class="flex items-center space-x-2">
-                        <img src="quantaquest logo2.png" alt="QuantaQuest Logo" class="w-8 h-8">
+                        <img src="quantaquest logo2.png" alt="QuantaQuest Logo" class="w-8 h-8" onerror="this.onerror=null;this.src='https://placehold.co/32x32/6366f1/ffffff?text=Q';">
                         <span class="font-bold text-xl text-slate-800">QuantaQuest</span>
                     </a>
                 </div>
@@ -112,14 +163,25 @@
             </div>
         </section>
 
+        <!-- Blended Image Gallery Section -->
+        <section class="py-12 md:py-20 bg-white overflow-hidden section-fade-in" style="animation-delay: 200ms;">
+            <div class="blended-gallery-container px-4">
+                <div class="blended-gallery">
+                    <img src="student1.png">
+                    <img src="student2.png">
+                    <img src="student3.png">
+                </div>
+            </div>
+        </section>
+
         <!-- Mission Statement Section -->
-        <section id="about" class="py-20 bg-white section-fade-in" style="animation-delay: 200ms;">
+        <section id="about" class="py-20 bg-slate-50 section-fade-in" style="animation-delay: 300ms;">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center">
                     <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Our Mission</h2>
                     <p class="mt-4 text-lg text-slate-600">Fostering talent and empowering the next generation.</p>
                 </div>
-                <div class="mt-12 max-w-3xl mx-auto bg-slate-50 border border-slate-200 rounded-xl p-8 text-center shadow-sm">
+                <div class="mt-12 max-w-3xl mx-auto bg-white border border-slate-200 rounded-xl p-8 text-center shadow-sm">
                    <i data-lucide="quote" class="w-12 h-12 text-indigo-200 mx-auto"></i>
                    <p class="mt-4 text-lg md:text-xl text-slate-700 leading-relaxed">
                         "QuantaQuest Foundation is committed to advancing education. We provide scholarships, awards, and support to high-achieving students from lower secondary to postgraduate levels in Ninh Binh province and across Vietnam, fostering learning and contributing to human resource quality for our homeland."
@@ -128,8 +190,8 @@
             </div>
         </section>
 
-        <!-- NEW: Logo Meaning Section -->
-        <section class="py-20 bg-slate-50 section-fade-in" style="animation-delay: 300ms;">
+        <!-- Logo Meaning Section -->
+        <section class="py-20 bg-white section-fade-in" style="animation-delay: 400ms;">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
                     <div class="text-center lg:text-left">
@@ -174,10 +236,9 @@
                 </div>
             </div>
         </section>
-        <!-- END: Logo Meaning Section -->
 
         <!-- Our Work Section -->
-        <section id="work" class="py-20 bg-white section-fade-in" style="animation-delay: 400ms;">
+        <section id="work" class="py-20 bg-slate-50 section-fade-in" style="animation-delay: 500ms;">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">What We Do</h2>
@@ -213,27 +274,27 @@
         </section>
         
         <!-- Impact Section -->
-        <section class="py-20 bg-slate-50 section-fade-in" style="animation-delay: 600ms;">
+        <section class="py-20 bg-white section-fade-in" style="animation-delay: 600ms;">
              <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                  <div class="text-center mb-12">
-                     <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Our Impact</h2>
-                     <p class="mt-4 text-lg text-slate-600">Transforming lives, one student at a time.</p>
-                 </div>
-                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-                     <div class="bg-white p-8 rounded-xl border border-slate-200">
-                         <h3 class="text-5xl font-extrabold gradient-text">500+</h3>
-                         <p class="mt-2 text-lg font-medium text-slate-700">Scholarships Awarded</p>
-                     </div>
-                     <div class="bg-white p-8 rounded-xl border border-slate-200">
-                         <h3 class="text-5xl font-extrabold gradient-text">1,200+</h3>
-                         <p class="mt-2 text-lg font-medium text-slate-700">Students Supported</p>
-                     </div>
-                     <div class="bg-white p-8 rounded-xl border border-slate-200">
-                         <h3 class="text-5xl font-extrabold gradient-text">10+</h3>
-                         <p class="mt-2 text-lg font-medium text-slate-700">Provinces Reached</p>
-                     </div>
-                 </div>
-            </div>
+                   <div class="text-center mb-12">
+                      <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Our Impact</h2>
+                      <p class="mt-4 text-lg text-slate-600">Transforming lives, one student at a time.</p>
+                   </div>
+                   <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+                       <div class="bg-slate-50 p-8 rounded-xl border border-slate-200">
+                           <h3 class="text-5xl font-extrabold gradient-text">500+</h3>
+                           <p class="mt-2 text-lg font-medium text-slate-700">Scholarships Awarded</p>
+                       </div>
+                       <div class="bg-slate-50 p-8 rounded-xl border border-slate-200">
+                           <h3 class="text-5xl font-extrabold gradient-text">1,200+</h3>
+                           <p class="mt-2 text-lg font-medium text-slate-700">Students Supported</p>
+                       </div>
+                       <div class="bg-slate-50 p-8 rounded-xl border border-slate-200">
+                           <h3 class="text-5xl font-extrabold gradient-text">10+</h3>
+                           <p class="mt-2 text-lg font-medium text-slate-700">Provinces Reached</p>
+                       </div>
+                   </div>
+             </div>
         </section>
 
         <!-- Get Involved Section -->
@@ -249,7 +310,7 @@
                         Make a Donation
                     </a>
                 </div>
-                 <p class="mt-8 text-sm text-slate-400">
+               <p class="mt-8 text-sm text-slate-400">
                     Interested in volunteering or partnerships? <a href="contact.html" class="underline hover:text-white">Contact us</a>.
                 </p>
             </div>
@@ -262,7 +323,7 @@
                     <div>
                         <!-- Updated footer logo link -->
                         <a href="index.html" class="flex items-center space-x-2">
-                            <img src="quantaquest logo2.png" alt="QuantaQuest Logo" class="w-8 h-8">
+                            <img src="quantaquest logo2.png" alt="QuantaQuest Logo" class="w-8 h-8" onerror="this.onerror=null;this.src='https://placehold.co/32x32/6366f1/ffffff?text=Q';">
                             <span class="font-bold text-xl text-white">QuantaQuest</span>
                         </a>
                         <p class="mt-4 text-slate-400">Advancing education for the next generation of leaders in Vietnam.</p>
@@ -336,8 +397,7 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // entry.target.style.animationPlayState = 'running'; // This can be removed for a one-shot animation
-                    entry.target.classList.add('is-visible'); // A class can be better for managing state
+                    entry.target.classList.add('is-visible');
                     observer.unobserve(entry.target);
                 }
             });
