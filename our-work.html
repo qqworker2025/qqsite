@@ -89,6 +89,21 @@
                 transform: translateY(0);
             }
         }
+
+        .student-card img {
+
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+
+        }
+
+        .student-card:hover img {
+
+            transform: scale(1.05);
+
+            box-shadow: 0 10px 20px -5px rgba(79, 70, 229, 0.4);
+
+        }
+        
     </style>
 </head>
 <body>
@@ -169,6 +184,35 @@
                 </div>
             </div>
         </section>
+                <!-- UPDATED: Outstanding Awarded Students Section -->
+
+        <section class="py-20 bg-slate-100 section-fade-in" style="animation-delay: 300ms;">
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="text-center mb-12">
+
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900">Our Outstanding Students</h2>
+
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600">
+
+                        Celebrating the bright minds and future leaders we've had the honor to support.
+
+                    </p>
+
+                </div>
+
+                <div id="student-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-6 gap-y-10">
+
+                    <!-- Student cards will be injected here by JS -->
+
+                </div>
+
+            </div>
+
+        </section>
+
+
     </main>
 
       <!-- Footer -->
@@ -371,7 +415,11 @@
         // Initialize the timeline navigation and set up event listeners
         function initializeTimeline() {
             // Populate the timeline navigation
-            activitiesData.forEach(activity => {
+             // We're only showing a few recent activities for brevity
+
+            const recentActivities = activitiesData.slice(0, 5);
+
+            recentActivities.forEach(activity => {
                 const navItem = document.createElement('div');
                 navItem.className = 'timeline-nav-item';
                 navItem.dataset.target = activity.id;
@@ -385,8 +433,20 @@
             // Add a single event listener to the container
             timelineNavContainer.addEventListener('click', (e) => {
                 const targetItem = e.target.closest('.timeline-nav-item');
-                if (targetItem) {
-                    displayPost(targetItem.dataset.target);
+
+                const activityId = targetItem ? targetItem.dataset.target : null;
+
+                
+
+                // Find the full data for the clicked item, even if not in the recent list
+
+                const activityExists = activitiesData.some(act => act.id === activityId);
+
+
+
+                if (activityId && activityExists) {
+
+                    displayPost(activityId);
                 }
             });
 
